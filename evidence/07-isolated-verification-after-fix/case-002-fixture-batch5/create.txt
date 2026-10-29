@@ -1,0 +1,3 @@
+POST /imports  (x-lab-workspace: cedar-demo, Content-Type: text/csv, body: request.csv)
+HTTP 202
+{"id":"6f54ef29-1afb-494a-a92a-0c7b558e2e1f","workspaceId":"cedar-demo","state":"queued","total":12}

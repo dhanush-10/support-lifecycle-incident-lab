@@ -1,0 +1,11 @@
+$ vitest run
+
+ RUN  v3.2.7 <repo>
+
+ ✓ tests/http.test.ts (25 tests) 646ms
+
+ Test Files  1 passed (1)
+      Tests  25 passed (25)
+   Start at  10:46:14
+   Duration  1.15s (transform 119ms, setup 0ms, collect 138ms, tests 646ms, environment 0ms, prepare 148ms)
+

@@ -1,0 +1,88 @@
+
+ RUN  v3.2.7 <repo>
+
+ ❯ tests/batch-processing.test.ts (46 tests | 32 failed) 2767ms
+   ✓ batch size 1 > processes all 1 records exactly once 107ms
+   × batch size 1 > processes all 2 records exactly once 75ms
+     → expected { …(6) } to deeply equal { …(6) }
+   × batch size 1 > processes all 3 records exactly once 50ms
+     → expected { …(6) } to deeply equal { …(6) }
+   × batch size 1 > processes all 12 records exactly once 59ms
+     → expected { …(6) } to deeply equal { …(6) }
+   × batch size 1 > processes all 25 records exactly once 52ms
+     → expected { …(6) } to deeply equal { …(6) }
+   × batch size 1 > processes all 200 records exactly once 115ms
+     → expected { …(6) } to deeply equal { …(6) }
+   × batch size 1 > the supplied seed case and the paused control are handled correctly after startup 4ms
+     → expected { id: 'case-002', …(5) } to deeply equal { id: 'case-002', …(5) }
+   × batch size 1 > a large import in one workspace does not leak into or disturb the other workspace 51ms
+     → expected { …(6) } to deeply equal { …(6) }
+   ✓ batch size 3 > processes all 1 records exactly once 61ms
+   ✓ batch size 3 > processes all 2 records exactly once 54ms
+   ✓ batch size 3 > processes all 3 records exactly once 52ms
+   × batch size 3 > processes all 4 records exactly once 47ms
+     → expected { …(6) } to deeply equal { …(6) }
+   × batch size 3 > processes all 5 records exactly once 71ms
+     → expected { …(6) } to deeply equal { …(6) }
+   × batch size 3 > processes all 6 records exactly once 48ms
+     → expected { …(6) } to deeply equal { …(6) }
+   × batch size 3 > processes all 7 records exactly once 51ms
+     → expected { …(6) } to deeply equal { …(6) }
+   × batch size 3 > processes all 12 records exactly once 48ms
+     → expected { …(6) } to deeply equal { …(6) }
+   × batch size 3 > processes all 25 records exactly once 47ms
+     → expected { …(6) } to deeply equal { …(6) }
+   × batch size 3 > processes all 200 records exactly once 72ms
+     → expected { …(6) } to deeply equal { …(6) }
+   × batch size 3 > the supplied seed case and the paused control are handled correctly after startup 3ms
+     → expected { id: 'case-002', …(5) } to deeply equal { id: 'case-002', …(5) }
+   × batch size 3 > a large import in one workspace does not leak into or disturb the other workspace 51ms
+     → expected { …(6) } to deeply equal { …(6) }
+   ✓ batch size 5 > processes all 1 records exactly once 67ms
+   ✓ batch size 5 > processes all 4 records exactly once 54ms
+   ✓ batch size 5 > processes all 5 records exactly once 55ms
+   × batch size 5 > processes all 6 records exactly once 50ms
+     → expected { …(6) } to deeply equal { …(6) }
+   × batch size 5 > processes all 9 records exactly once 50ms
+     → expected { …(6) } to deeply equal { …(6) }
+   × batch size 5 > processes all 10 records exactly once 59ms
+     → expected { …(6) } to deeply equal { …(6) }
+   × batch size 5 > processes all 11 records exactly once 47ms
+     → expected { …(6) } to deeply equal { …(6) }
+   × batch size 5 > processes all 12 records exactly once 49ms
+     → expected { …(6) } to deeply equal { …(6) }
+   × batch size 5 > processes all 25 records exactly once 93ms
+     → expected { …(6) } to deeply equal { …(6) }
+   × batch size 5 > processes all 200 records exactly once 69ms
+     → expected { …(6) } to deeply equal { …(6) }
+   × batch size 5 > the supplied seed case and the paused control are handled correctly after startup 2ms
+     → expected { id: 'case-002', …(5) } to deeply equal { id: 'case-002', …(5) }
+   × batch size 5 > a large import in one workspace does not leak into or disturb the other workspace 52ms
+     → expected { …(6) } to deeply equal { …(6) }
+   ✓ batch size 20 > processes all 1 records exactly once 59ms
+   ✓ batch size 20 > processes all 12 records exactly once 52ms
+   ✓ batch size 20 > processes all 19 records exactly once 74ms
+   ✓ batch size 20 > processes all 20 records exactly once 50ms
+   × batch size 20 > processes all 21 records exactly once 49ms
+     → expected { …(6) } to deeply equal { …(6) }
+   × batch size 20 > processes all 25 records exactly once 61ms
+     → expected { …(6) } to deeply equal { …(6) }
+   × batch size 20 > processes all 39 records exactly once 30ms
+     → expected { …(6) } to deeply equal { …(6) }
+   × batch size 20 > processes all 40 records exactly once 70ms
+     → expected { …(6) } to deeply equal { …(6) }
+   × batch size 20 > processes all 41 records exactly once 47ms
+     → expected { …(6) } to deeply equal { …(6) }
+   × batch size 20 > processes all 200 records exactly once 55ms
+     → expected { …(6) } to deeply equal { …(6) }
+   ✓ batch size 20 > the supplied seed case and the paused control are handled correctly after startup 11ms
+   × batch size 20 > a large import in one workspace does not leak into or disturb the other workspace 34ms
+     → expected { …(6) } to deeply equal { …(6) }
+   ✓ recovery of the existing partially processed case (lab-only resume-case) > resume requeues only the skipped records and preserves existing results and identities 134ms
+   ✓ recovery of the existing partially processed case (lab-only resume-case) > resume-case refuses to run when nothing is pending 13ms
+
+ Test Files  1 failed (1)
+      Tests  32 failed | 14 passed (46)
+   Start at  10:46:56
+   Duration  3.35s (transform 176ms, setup 0ms, collect 163ms, tests 2.77s, environment 0ms, prepare 218ms)
+

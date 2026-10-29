@@ -1,0 +1,4 @@
+$ bun run resume-case
+$ bun scripts/resume-case.ts
+{"id":"case-002","workspaceId":"cedar-demo","state":"queued","pending":5}
+exit=0

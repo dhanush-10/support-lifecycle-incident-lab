@@ -1,0 +1,14 @@
+# Programmatic comparison: pre-recovery (04, patched server running, before resume-case) vs post-recovery (06)
+UNCHANGED  maple-control-002-detail
+UNCHANGED  maple-control-002-records
+UNCHANGED  maple-control-002-results
+UNCHANGED  maple-control-002-events
+results before: 7  after: 12
+all prior results retained unchanged: True
+duplicate result recordIds after: 0
+result recordIds after: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+same source record ids and refs: True
+every result equals label.trim().toUpperCase(): True
+earlier events preserved as prefix: True
+new events: [(7, 'resume_requested', {'pending': 5}), (8, 'processing_started', {}), (9, 'batch_processed', {'recordIds': [6, 7, 8, 9, 10], 'count': 5}), (10, 'processing_completed', {})]
+final detail: {'id': 'case-002', 'workspaceId': 'cedar-demo', 'state': 'completed', 'total': 12, 'processed': 12, 'pending': 0}

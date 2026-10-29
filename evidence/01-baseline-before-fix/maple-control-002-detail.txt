@@ -1,0 +1,3 @@
+GET /imports/control-002  (x-lab-workspace: maple-demo)
+HTTP 200
+{"id":"control-002","workspaceId":"maple-demo","state":"paused","total":3,"processed":0,"pending":3}

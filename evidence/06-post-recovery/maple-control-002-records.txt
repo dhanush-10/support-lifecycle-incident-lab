@@ -1,0 +1,3 @@
+GET /imports/control-002/records  (x-lab-workspace: maple-demo)
+HTTP 200
+{"records":[{"id":13,"documentRef":"CTRL-001","label":"Control 001","state":"pending"},{"id":14,"documentRef":"CTRL-002","label":"Control 002","state":"pending"},{"id":15,"documentRef":"CTRL-003","label":"Control 003","state":"pending"}]}

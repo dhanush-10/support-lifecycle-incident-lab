@@ -1,0 +1,12 @@
+$ vitest run
+
+ RUN  v3.2.7 <repo>
+
+ ✓ tests/batch-processing.test.ts (46 tests) 2955ms
+ ✓ tests/http.test.ts (25 tests) 713ms
+
+ Test Files  2 passed (2)
+      Tests  71 passed (71)
+   Start at  10:47:12
+   Duration  4.59s (transform 195ms, setup 0ms, collect 251ms, tests 3.67s, environment 1ms, prepare 297ms)
+

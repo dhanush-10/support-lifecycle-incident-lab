@@ -1,0 +1,37 @@
+--- /tmp/worker.ts.orig	2026-10-29 10:47:08.342115703 +0000
++++ src/worker.ts	2026-10-29 10:47:08.365621985 +0000
+@@ -5,12 +5,13 @@
+   if (!Number.isInteger(batchSize) || batchSize < 1 || batchSize > 20) throw new Error("Batch size must be from 1 to 20");
+   if (!repository.claimImport(workspaceId, importId)) return;
+   try {
+-    let offset = 0;
+     while (true) {
+-      const batch = repository.pendingBatch(workspaceId, importId, batchSize, offset);
++      // Always take the first pending rows: committed rows leave the pending set, so the next query
++      // already starts at the first unprocessed record. (Skipping ahead by the number of rows
++      // processed would silently skip pending rows.)
++      const batch = repository.pendingBatch(workspaceId, importId, batchSize);
+       if (batch.length === 0) break;
+       repository.commitBatch(workspaceId, importId, batch);
+-      offset += batch.length;
+     }
+     repository.finishImport(workspaceId, importId);
+   } catch (error) {
+--- /tmp/repository.ts.orig	2026-10-29 10:47:08.343522892 +0000
++++ src/repository.ts	2026-10-29 10:47:08.366055363 +0000
+@@ -97,11 +97,11 @@
+     }).immediate();
+   }
+ 
+-  pendingBatch(workspaceId: WorkspaceId, id: string, limit: number, offset: number): SourceRecord[] {
+-    return this.db.query<SourceRecord, [string, string, number, number]>(`
++  pendingBatch(workspaceId: WorkspaceId, id: string, limit: number): SourceRecord[] {
++    return this.db.query<SourceRecord, [string, string, number]>(`
+       SELECT id, document_ref AS documentRef, label, state FROM records
+-      WHERE workspace_id = ? AND import_id = ? AND state = 'pending' ORDER BY id LIMIT ? OFFSET ?
+-    `).all(workspaceId, id, limit, offset);
++      WHERE workspace_id = ? AND import_id = ? AND state = 'pending' ORDER BY id LIMIT ?
++    `).all(workspaceId, id, limit);
+   }
+ 
+   commitBatch(workspaceId: WorkspaceId, id: string, rows: readonly SourceRecord[]): void {

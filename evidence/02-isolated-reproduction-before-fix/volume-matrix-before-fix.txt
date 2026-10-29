@@ -1,0 +1,45 @@
+# Pre-fix volume matrix, batch size 5 (isolated DB, unpatched code, server on :4329)
+1    rows -> state=completed total=1 processed=1 pending=0
+2    rows -> state=completed total=2 processed=2 pending=0
+3    rows -> state=completed total=3 processed=3 pending=0
+4    rows -> state=completed total=4 processed=4 pending=0
+5    rows -> state=completed total=5 processed=5 pending=0
+6    rows -> state=completed total=6 processed=5 pending=1
+7    rows -> state=completed total=7 processed=5 pending=2
+8    rows -> state=completed total=8 processed=5 pending=3
+9    rows -> state=completed total=9 processed=5 pending=4
+10   rows -> state=completed total=10 processed=5 pending=5
+11   rows -> state=completed total=11 processed=6 pending=5
+12   rows -> state=completed total=12 processed=7 pending=5
+13   rows -> state=completed total=13 processed=8 pending=5
+14   rows -> state=completed total=14 processed=9 pending=5
+15   rows -> state=completed total=15 processed=10 pending=5
+16   rows -> state=completed total=16 processed=10 pending=6
+20   rows -> state=completed total=20 processed=10 pending=10
+25   rows -> state=completed total=25 processed=15 pending=10
+40   rows -> state=completed total=40 processed=20 pending=20
+100  rows -> state=completed total=100 processed=50 pending=50
+200  rows -> state=completed total=200 processed=100 pending=100
+
+# Pre-fix volume matrix, batch size 3 (isolated DB, unpatched code, server on :4330)
+1    rows -> state=completed total=1 processed=1 pending=0
+2    rows -> state=completed total=2 processed=2 pending=0
+3    rows -> state=completed total=3 processed=3 pending=0
+4    rows -> state=completed total=4 processed=3 pending=1
+5    rows -> state=completed total=5 processed=3 pending=2
+6    rows -> state=completed total=6 processed=3 pending=3
+7    rows -> state=completed total=7 processed=4 pending=3
+8    rows -> state=completed total=8 processed=5 pending=3
+9    rows -> state=completed total=9 processed=6 pending=3
+10   rows -> state=completed total=10 processed=6 pending=4
+11   rows -> state=completed total=11 processed=6 pending=5
+12   rows -> state=completed total=12 processed=6 pending=6
+13   rows -> state=completed total=13 processed=7 pending=6
+14   rows -> state=completed total=14 processed=8 pending=6
+15   rows -> state=completed total=15 processed=9 pending=6
+16   rows -> state=completed total=16 processed=9 pending=7
+20   rows -> state=completed total=20 processed=11 pending=9
+25   rows -> state=completed total=25 processed=13 pending=12
+40   rows -> state=completed total=40 processed=21 pending=19
+100  rows -> state=completed total=100 processed=51 pending=49
+200  rows -> state=completed total=200 processed=101 pending=99

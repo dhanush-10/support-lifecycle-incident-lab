@@ -1,0 +1,3 @@
+GET /health  (x-lab-workspace: none)
+HTTP 200
+{"status":"ok","mode":"training","batchSize":5}
